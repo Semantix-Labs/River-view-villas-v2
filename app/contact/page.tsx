@@ -173,7 +173,7 @@ export default function ContactPage() {
                     {[
                       { icon: <MapPin size={16} strokeWidth={1.5} style={{ color: 'var(--gold)', flexShrink: 0, marginTop: '2px' }} />, content: 'No 102/7C, Mathugama Road, Dharga Town, Bentota, Sri Lanka' },
                       { icon: <Phone size={16} strokeWidth={1.5} style={{ color: 'var(--gold)', flexShrink: 0 }} />, content: '+94 777 217 829 · +94 777 417 737' },
-                      { icon: <Mail size={16} strokeWidth={1.5} style={{ color: 'var(--gold)', flexShrink: 0 }} />, content: 'Riverviewvillas23@gmail.com' },
+                      { icon: <Mail size={16} strokeWidth={1.5} style={{ color: 'var(--gold)', flexShrink: 0 }} />, content: 'info@riverview-villas.com' },
                     ].map((item, i) => (
                       <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                         {item.icon}

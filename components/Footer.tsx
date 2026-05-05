@@ -118,8 +118,8 @@ export default function Footer() {
               </div>
               <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
                 <Mail size={16} strokeWidth={1.5} style={{ color: 'var(--gold)', flexShrink: 0 }} />
-                <a href="mailto:Riverviewvillas23@gmail.com" style={{ color: 'var(--text-light)', fontSize: '13px', textDecoration: 'none' }}>
-                  Riverviewvillas23@gmail.com
+                <a href="mailto:info@riverview-villas.com" style={{ color: 'var(--text-light)', fontSize: '13px', textDecoration: 'none' }}>
+                  info@riverview-villas.com
                 </a>
               </div>
               {/* Social */}

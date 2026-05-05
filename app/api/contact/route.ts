@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
   try {
     await transporter.sendMail({
       from: `"River View Villas Website" <${process.env.SMTP_USER}>`,
-      to: process.env.CONTACT_TO ?? 'Riverviewvillas23@gmail.com',
+      to: process.env.CONTACT_TO ?? 'info@riverview-villas.com, Riverviewvillas23@gmail.com',
       cc: process.env.CONTACT_CC || undefined,
       replyTo: email,
       subject: `New Enquiry from ${name} — River View Villas`,
