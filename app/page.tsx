@@ -71,7 +71,7 @@ export default function HomePage() {
             zIndex: 0,
           }}
         >
-          <source src="/header vidoe.mp4" type="video/mp4" />
+          <source src="/header.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay for text legibility */}
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.55)', zIndex: 1 }} />
