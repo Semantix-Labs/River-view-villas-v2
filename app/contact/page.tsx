@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import FadeIn from '@/components/FadeIn';
 import { MapPin, Phone, Mail, Clock, Car } from 'lucide-react';
+import { trackEvent } from '@/lib/pixel';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -29,6 +30,7 @@ export default function ContactPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Something went wrong.');
       setSubmitted(true);
+      trackEvent('Lead', { content_name: 'Contact Form', content_category: form.interest || 'General' });
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
     } finally {

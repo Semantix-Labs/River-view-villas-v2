@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import { trackEvent } from '@/lib/pixel';
 
 export default function WhatsAppButton() {
   const [bouncing, setBouncing] = useState(false);
@@ -54,6 +55,7 @@ export default function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
+        onClick={() => trackEvent('Contact', { content_name: 'WhatsApp Button' })}
         className={`wa-btn${bouncing ? ' is-bouncing' : ''}`}
         style={{
           position: 'fixed',

@@ -1,8 +1,10 @@
 'use client';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import FadeIn from '@/components/FadeIn';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { trackEvent } from '@/lib/pixel';
 
 const villas = [
   {
@@ -70,6 +72,10 @@ const amenitiesBar = [
 ];
 
 export default function AccommodationPage() {
+  useEffect(() => {
+    trackEvent('ViewContent', { content_name: 'Accommodation Page', content_category: 'Villas' });
+  }, []);
+
   return (
     <div style={{ background: 'var(--cream)' }}>
 
@@ -159,7 +165,13 @@ export default function AccommodationPage() {
                         ))}
                       </div>
                     </div>
-                    <a href={villa.link} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                    <a
+                      href={villa.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary"
+                      onClick={() => trackEvent('InitiateCheckout', { content_name: villa.name, content_category: 'Villa Booking' })}
+                    >
                       Reserve {villa.name.split(' ').slice(0, 2).join(' ')} <ArrowRight size={15} strokeWidth={1.5} />
                     </a>
                   </div>
@@ -183,7 +195,13 @@ export default function AccommodationPage() {
               Book directly with us for the best available rate. All rooms include Ayurvedic breakfast. Package inclusions vary — see our Packages page for full board and treatment inclusions.
             </p>
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="https://booking.profitroom.com/en/riverviewvillas/home" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <a
+                href="https://booking.profitroom.com/en/riverviewvillas/home"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                onClick={() => trackEvent('InitiateCheckout', { content_name: 'Check Availability CTA', content_category: 'Villa Booking' })}
+              >
                 Check Availability <ArrowRight size={16} strokeWidth={1.5} />
               </a>
               <Link href="/contact" className="btn-secondary">
