@@ -24,6 +24,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-6N250QXJ7N" strategy="afterInteractive" />
+        <Script id="gtag-config" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-6N250QXJ7N');
+gtag('config', 'AW-11405539991');`}
+        </Script>
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
